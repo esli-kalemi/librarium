@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Librarium</title>
-
+    <!-- ICONS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <!-- GOOGLE FONT -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -60,17 +61,17 @@
         </ul>
 
         <!-- RIGHT BUTTONS -->
-        <div class="nav-buttons">
+       <div class="nav-buttons">
 
-            <button class="btn signup">
-                Sign up
-            </button>
+    <button class="hero-btn primary" onclick="openSignup()">
+        Sign up
+    </button>
 
-            <button class="btn login">
-                Login
-            </button>
+    <button class="hero-btn secondary" onclick="openLogin()">
+        Login
+    </button>
 
-        </div>
+</div>
 
     </nav>
 
@@ -106,6 +107,245 @@
 
     </section>
 
+<!-- 3 STEP PHILOSOPHY -->
+
+<section class="philosophy">
+
+    <h1>3-Step Philosophy</h1>
+
+    <div class="philosophy-container">
+
+        <div class="philosophy-card">
+
+            <img src="images/step1.jpg" alt="">
+
+            <div class="number">1</div>
+
+            <h2>Add books and resources</h2>
+
+            <p>
+                The administrator can add, update and delete
+                books including information such as title,
+                author, category, price and description.
+            </p>
+
+        </div>
+
+        <div class="philosophy-card">
+
+            <img src="images/step2.jpg" alt="">
+
+            <div class="number">2</div>
+
+            <h2>Manage members and loans</h2>
+
+            <p>
+                The system allows organizing books by
+                categories and authors for a cleaner
+                catalog structure.
+            </p>
+
+        </div>
+
+        <div class="philosophy-card">
+
+            <img src="images/step3.jpg" alt="">
+
+            <div class="number">3</div>
+
+            <h2>Track insights and automate tasks</h2>
+
+            <p>
+                The platform stores customer data and order
+                history, helping to track purchase activity.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- NUMBERS -->
+<section class="stats">
+
+    <div class="stat-box">
+        <h1>
+            <span class="counter" data-target="10">0</span>K+
+        </h1>
+        <p>libraries</p>
+    </div>
+
+    <div class="stat-box">
+        <h1>
+            <span class="counter" data-target="20">0</span>K+
+        </h1>
+        <p>books</p>
+    </div>
+
+    <div class="stat-box">
+        <h1>
+            <span class="counter" data-target="50">0</span>K+
+        </h1>
+        <p>members</p>
+    </div>
+
+    <div class="stat-box">
+        <h1>
+            <span class="counter" data-target="40">0</span>K+
+        </h1>
+        <p>check-outs</p>
+    </div>
+
+</section>
+<!-- ABOUT US -->
+
+<section class="about-us">
+
+    <h1>About us:</h1>
+
+    <div class="about-container">
+
+        <div class="about-image">
+
+            <img src="images/about.jpg" alt="">
+
+        </div>
+
+        <div class="about-content">
+
+            <div class="about-box">
+
+                <h2>Our story</h2>
+
+                <p>
+                    Many institutions struggle to manage,
+                    catalog and monitor books and resources.
+                    Librarium brings everything together in
+                    one place helping administrators organize
+                    books, manage inventory, track customer
+                    activity and monitor sales with ease.
+                </p>
+
+            </div>
+
+            <div class="about-box">
+
+                <h2>Our mission</h2>
+
+                <p>
+                    “Our mission is to help bookstores and
+                    libraries manage their operations
+                    efficiently through simple, modern and
+                    accessible technology.”
+                </p>
+
+            </div>
+
+            <div class="about-box">
+
+                <h2>Why Librarium</h2>
+
+                <ul>
+                    <li>Simple and intuitive interface</li>
+                    <li>Organized catalog management</li>
+                    <li>Real-time inventory monitoring</li>
+                    <li>Modern analytics and reports</li>
+                    <li>Designed for modern bookstores and libraries</li>
+                </ul>
+
+            </div>
+
+            <div class="about-box">
+
+                <h2>Future goals</h2>
+
+                <ul>
+                    <li>AI recommendations</li>
+                    <li>Cloud sync</li>
+                    <li>Mobile management</li>
+                    <li>Barcode scanning</li>
+                    <li>Digital libraries</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+<!-- CONTACT -->
+
+<section class="contact-section">
+
+    <div class="contact-left">
+
+        <h1>LIBRARIUM</h1>
+
+        <p>Library management system</p>
+ <img src="images/logo.png" alt="Logo" class="contact-logo">
+        <div class="contact-info">
+
+            <div class="info-row">
+                <span>email:</span>
+                <p><i class="fa-solid fa-envelope"></i> librarium@yahoo.com</p>
+            </div>
+
+            <div class="info-row">
+                <span>phone:</span>
+                <p><i class="fa-solid fa-phone"></i> +355 686741025</p>
+            </div>
+
+            <div class="info-row">
+                <span>address:</span>
+                <p><i class="fa-solid fa-location-dot"></i> Dominusoft center</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="contact-right">
+
+        <h2>Contact Form</h2>
+
+        <input type="text" placeholder="Name">
+
+        <input type="email" placeholder="Email address">
+
+        <textarea placeholder="Leave a message"></textarea>
+
+        <button>Send message</button>
+
+    </div>
+</section>
+<!-- LOGIN SIGNUP BUTTONS -->
+<section>
+<div id="authModal" class="modal">
+
+  <div class="modal-content">
+
+    <span class="close" onclick="closeModal()">&times;</span>
+
+    <!-- LOGIN -->
+    <form id="loginForm" class="form">
+      <h2>Login</h2>
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Password" required>
+      <button type="submit">Login</button>
+    </form>
+
+    <!-- SIGNUP -->
+    <form id="signupForm" class="form" style="display:none;">
+      <h2>Sign Up</h2>
+      <input type="text" placeholder="Name" required>
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Password" required>
+      <button type="submit">Create Account</button>
+    </form>
+
+  </div>
+</div>
+</section>
     <!-- SCRIPT -->
     <script src="script.js"></script>
 
