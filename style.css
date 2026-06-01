@@ -597,3 +597,100 @@ body{
     cursor: pointer;
     font-size: 22px;
 }
+/* THE CLASSICS LIBRARY */
+.classics-library {
+    padding: 80px 60px;
+    background-color: #0d0d0d;
+    text-align: center;
+}
+
+.classics-library h1 {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.classics-subtitle {
+    color: #aaa;
+    font-size: 1rem;
+    margin-bottom: 50px;
+}
+
+.classics-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.classics-track-container {
+    overflow: hidden;
+    flex: 1;
+}
+
+.classics-track {
+    display: flex;
+    gap: 24px;
+    transition: transform 0.4s ease;
+    will-change: transform;
+}
+
+.book-card {
+    min-width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-8px);
+}
+
+.book-card img {
+    width: 150px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 6px;
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    display: block;
+}
+
+.book-card p {
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-align: center;
+    margin: 0;
+    max-width: 150px;
+}
+
+.book-card span {
+    color: #888;
+    font-size: 0.75rem;
+    text-align: center;
+}
+
+.slider-arrow {
+    background: transparent;
+    border: 1px solid #444;
+    color: #fff;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    font-size: 1rem;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background 0.2s, border-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-arrow:hover {
+    background: #ffffff18;
+    border-color: #aaa;
+}

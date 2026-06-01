@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Librarium — Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/dashboardstyle.css">
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+    <div class="sidebar-logo">
+        <span>LIBRARIUM</span>
+    </div>
+    <ul class="sidebar-nav">
+        <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="#" class="active"><i class="fa-solid fa-gauge"></i> Dashboard</a></li>
+        <li><a href="#books"><i class="fa-solid fa-book"></i> Books</a></li>
+        <li><a href="#categories"><i class="fa-solid fa-tags"></i> Categories</a></li>
+        <li><a href="#authors"><i class="fa-solid fa-feather"></i> Authors</a></li>
+        <li><a href="#clients"><i class="fa-solid fa-users"></i> Clients</a></li>
+        <li><a href="#orders"><i class="fa-solid fa-cart-shopping"></i> Orders</a></li>
+        <li><a href="#reports"><i class="fa-solid fa-chart-bar"></i> Reports</a></li>
+        <li><a href="#"><i class="fa-solid fa-gear"></i> Settings</a></li>
+        <li><a href="#inventory"><i class="fa-solid fa-warehouse"></i> Inventories</a></li>
+        <li class="logout"><a href="index.html"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+    </ul>
+</aside>
+
+<!-- MAIN -->
+<main class="main">
+
+    <!-- TOP BAR -->
+    <div class="topbar">
+        <span class="topbar-title">ADMIN DASHBOARD</span>
+        <div class="topbar-right">
+            <a href="index.html"><i class="fa-solid fa-arrow-left"></i> Back to Site</a>
+            <a href="#"><i class="fa-solid fa-bell"></i> Notifications</a>
+            <a href="#"><i class="fa-solid fa-circle-user"></i> Admin</a>
+        </div>
+    </div>
+
+    <!-- HERO BANNER -->
+    <div class="hero-banner">
+        <div class="hero-banner-left">
+            <h2>Manage your library in 3 simple steps:</h2>
+            <div class="step-buttons">
+                <button class="step-btn" onclick="document.getElementById('books').scrollIntoView({behavior:'smooth'})">
+                    <i class="fa-solid fa-plus"></i> Add books and resources →
+                </button>
+                <button class="step-btn" onclick="document.getElementById('clients').scrollIntoView({behavior:'smooth'})">
+                    <i class="fa-solid fa-users"></i> Manage members and loans →
+                </button>
+                <button class="step-btn" onclick="document.getElementById('reports').scrollIntoView({behavior:'smooth'})">
+                    <i class="fa-solid fa-chart-line"></i> Track insights and automate tasks →
+                </button>
+            </div>
+        </div>
+        <div class="hero-banner-right">
+            <h1>welcome to<br><span>LIBRARIUM</span></h1>
+            <p>LIBRARY MANAGEMENT SYSTEM</p>
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- MINI STATS -->
+        <div class="mini-stats">
+            <div class="mini-stat">
+                <div class="value">1,248</div>
+                <div class="label">Total Books</div>
+            </div>
+            <div class="mini-stat">
+                <div class="value">342</div>
+                <div class="label">Members</div>
+            </div>
+            <div class="mini-stat">
+                <div class="value">87</div>
+                <div class="label">Active Loans</div>
+            </div>
+            <div class="mini-stat">
+                <div class="value">14</div>
+                <div class="label">Overdue</div>
+            </div>
+        </div>
+
+        <!-- BOOK MANAGEMENT -->
+        <div class="section-block" id="books">
+            <div class="section-header">
+                <i class="fa-solid fa-book" style="color:#fff; font-size:1.1rem;"></i>
+                <h2>Book Management</h2>
+            </div>
+            <div class="section-body">
+                <div class="two-col">
+                    <!-- Left: Table + search -->
+                    <div>
+                        <div class="table-card">
+                            <div class="table-card-title">BOOK TABLE</div>
+                            <div style="padding:10px; display:flex; gap:8px;">
+                                <input type="text" placeholder="Search books..." style="flex:1; padding:6px 10px; border:1px solid #ddd; border-radius:4px; font-size:0.72rem; font-family:'Poppins',sans-serif;">
+                            </div>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Title</th>
+                                        <th>Author</th>
+                                        <th>Category</th>
+                                        <th>Price</th>
+                                        <th>Stock</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="bookTableBody" >
+                                    <tr class="empty-row"><td></td><td></td><td></td><td></td><td></td></tr>
+                                    <tr class="empty-row"><td></td><td></td><td></td><td></td><td></td></tr>
+                                    <tr class="empty-row"><td></td><td></td><td></td><td></td><td></td></tr>
+                                    <tr class="empty-row"><td></td><td></td><td></td><td></td><td></td></tr>
+                                    <tr class="empty-row"><td></td><td></td><td></td><td></td><td></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="btn-row">
+                            <button class="btn btn-secondary"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+                            <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="addBook()">Add →</button>
+                           
+                        </div>
+                    </div>
+                    <!-- Right: Type cards + add form -->
+                    <div style="display:flex; flex-direction:column; gap:12px;">
+                        <div class="two-col" style="gap:10px;">
+                            <div class="img-card">
+                                <img src="images/step1.jpg" alt="Paperback">
+                                <div class="img-card-label">PAPERBACK/HARDBOUND</div>
+                                <div class="img-card-desc">We proudly carry over one million book titles</div>
+                            </div>
+                            <div class="img-card">
+                                <img src="images/step3.jpg" alt="Electronic">
+                                <div class="img-card-label">ELECTRONIC BOOKS</div>
+                                <div class="img-card-desc">An assortment of downloadable titles for your e-reader</div>
+                            </div>
+                        </div>
+                        <div class="form-card">
+    <h3>Add a Book</h3>
+
+    <form id="bookForm">
+
+        <div class="form-group">
+            <label>Title</label>
+            <input type="text" id="bookTitle" placeholder="Book title" required>
+        </div>
+
+        <div class="form-group">
+            <label>Author</label>
+            <input type="text" id="bookAuthor" placeholder="Author name" required>
+        </div>
+
+        <div class="form-group">
+            <label>Category</label>
+            <input type="text" id="bookCategory" placeholder="Category" required>
+        </div>
+
+        <div class="two-col" style="gap:8px;">
+            <div class="form-group">
+                <label>Price</label>
+                <input type="number" id="bookPrice" placeholder="0.00" required>
+            </div>
+
+            <div class="form-group">
+                <label>Stock</label>
+                <input type="number" id="bookStock" placeholder="0" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Description</label>
+            <textarea id="bookDescription" placeholder="Short description..."></textarea>
+        </div>
+
+        <button
+            type="submit"
+            id="addBookBtn"
+            class="btn btn-primary"
+            style="width:100%; justify-content:center;">
+            Add Book →
+        </button>
+
+    </form>
+</div>
+    </div> <!-- form-card -->
+    </div> <!-- right column -->
+</div> <!-- two-col -->
+</div> <!-- section-body -->
+</div> <!-- section-block books -->
+        <!-- AUTHORS & CATEGORIES -->
+        <div class="section-block" id="authors">
+            <div class="section-header blue">
+                <i class="fa-solid fa-feather" style="color:#fff; font-size:1.1rem;"></i>
+                <h2>Authors &amp; Categories</h2>
+            </div>
+            <div class="section-body">
+                <div class="two-col">
+                    <div>
+                        <div class="table-card">
+                            <div class="table-card-title">AUTHORS TABLE</div>
+                            <table>
+                                <thead>
+                                    <tr><th>Name</th><th>Biography</th><th>Titles</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="empty-row"><td></td><td></td><td></td></tr>
+                                    <tr class="empty-row"><td></td><td></td><td></td></tr>
+                                    <tr class="empty-row"><td></td><td></td><td></td></tr>
+                                    <tr class="empty-row"><td></td><td></td><td></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="btn-row">
+                            <button class="btn btn-info"><i class="fa-solid fa-plus"></i> Add Author →</button>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="table-card">
+                            <div class="table-card-title">CATEGORIES TABLE</div>
+                            <table>
+                                <thead>
+                                    <tr><th>Name</th><th>Quantity (books)</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="empty-row"><td></td><td></td></tr>
+                                    <tr class="empty-row"><td></td><td></td></tr>
+                                    <tr class="empty-row"><td></td><td></td></tr>
+                                    <tr class="empty-row"><td></td><td></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="btn-row">
+                            <button class="btn btn-info"><i class="fa-solid fa-pen"></i> Edit →</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CLIENTS & ORDERS -->
+        <div class="section-block" id="clients">
+            <div class="section-header teal">
+                <i class="fa-solid fa-users" style="color:#fff; font-size:1.1rem;"></i>
+                <h2>Clients &amp; Orders</h2>
+            </div>
+            <div class="section-body">
+                <div class="two-col">
+                    <div>
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                            <button class="btn btn-success"><i class="fa-solid fa-plus"></i> Add Client →</button>
+                        </div>
+                        <div class="table-card">
+                            <div class="table-card-title">CLIENTS TABLE</div>
+                            <table>
+                                <thead>
+                                    <tr><th>Name</th><th>Email</th><th>Total Orders</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="empty-row"><td></td><td></td><td></td></tr>
+                                    <tr class="empty-row"><td></td><td></td><td></td></tr>
+                                    <tr class="empty-row"><td></td><td></td><td></td></tr>
+                                    <tr class="empty-row"><td></td><td></td><td></td></tr>
+                                    <tr class="empty-row"><td></td><td></td><td></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="display:flex; justify-content:flex-end; margin-bottom:10px;">
+                            <button class="btn btn-primary"><i class="fa-solid fa-pen"></i> Edit Orders →</button>
+                        </div>
+                        <div class="table-card">
+                            <div class="table-card-title">ORDERS TABLE</div>
+                            <table>
+                                <thead>
+                                    <tr><th>ID</th><th>Client</th><th>Date</th><th>Status</th><th>Total</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="empty-row"><td></td><td></td><td></td><td></td><td></td></tr>
+                                    <tr class="empty-row"><td></td><td></td><td></td><td></td><td></td></tr>
+                                    <tr class="empty-row"><td></td><td></td><td></td><td></td><td></td></tr>
+                                    <tr class="empty-row"><td></td><td></td><td></td><td></td><td></td></tr>
+                                    <tr class="empty-row"><td></td><td></td><td></td><td></td><td></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- INVENTORY CONTROL -->
+        <div class="section-block" id="inventory">
+            <div class="section-header dark">
+                <i class="fa-solid fa-warehouse" style="color:#fff; font-size:1.1rem;"></i>
+                <h2>Inventory Control</h2>
+            </div>
+            <div class="section-body" style="position:relative;">
+                <div class="tab-nav">
+                    <a href="#" class="active">Inventories</a>
+                    <a href="#">Stock</a>
+                    <a href="#">Orders</a>
+                    <a href="#">Customers</a>
+                    <a href="#">Analytics</a>
+                    <a href="#">Settings</a>
+                    <a href="#">Products</a>
+                    <a href="#">Transfers</a>
+                    <a href="#">More</a>
+                </div>
+                <div style="display:flex; gap:10px; margin-bottom:14px;">
+                    <button class="btn btn-gold">Create Inventory</button>
+                    <input type="text" placeholder="Filter and search..." style="flex:1; padding:7px 12px; border:1px solid var(--border); border-radius:4px; font-family:'Poppins',sans-serif; font-size:0.75rem; background:#fdfbf8;">
+                </div>
+                <div class="table-card">
+                    <div class="table-card-title">INVENTORY TABLE</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Zip Code</th>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Status</th>
+                                <th>Responsible</th>
+                                <th>Address</th>
+                                <th>Total Value</th>
+                                <th>References</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="empty-row"><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr class="empty-row"><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr class="empty-row"><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr class="empty-row"><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr class="empty-row"><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="delivery-float">
+                    <i class="fa-solid fa-truck"></i> Deliveries
+                </div>
+            </div>
+        </div>
+
+        <!-- REPORTS & STATISTICS -->
+        <div class="section-block" id="reports">
+            <div class="section-header gold">
+                <i class="fa-solid fa-chart-bar" style="color:#fff; font-size:1.1rem;"></i>
+                <h2>Reports &amp; Statistics</h2>
+            </div>
+            <div class="section-body">
+                <div class="tab-nav">
+                    <a href="#" class="active">Reports</a>
+                    <a href="#">Graphics</a>
+                    <a href="#">Orders</a>
+                    <a href="#">Incomes</a>
+                    <a href="#">Analytics</a>
+                    <a href="#">Settings</a>
+                    <a href="#">Rankings</a>
+                    <a href="#">More</a>
+                </div>
+                <div class="report-btn-grid" style="margin-bottom:20px;">
+                    <button class="report-btn"><i class="fa-solid fa-chart-column"></i> Sales Charts →</button>
+                    <button class="report-btn"><i class="fa-solid fa-chart-pie"></i> Categories Charts →</button>
+                    <button class="report-btn"><i class="fa-solid fa-book-open"></i> Title Charts →</button>
+                    <button class="report-btn"><i class="fa-solid fa-feather-pointed"></i> Authors Charts →</button>
+                </div>
+                <div class="two-col">
+                    <div>
+                        <p style="font-size:0.7rem; color:#888; margin-bottom:8px; letter-spacing:0.5px; text-transform:uppercase;">Monthly Sales</p>
+                        <div class="chart-placeholder">
+                            <div class="chart-bar" style="height:60%;"></div>
+                            <div class="chart-bar" style="height:80%;"></div>
+                            <div class="chart-bar" style="height:55%;"></div>
+                            <div class="chart-bar" style="height:90%;"></div>
+                            <div class="chart-bar" style="height:70%;"></div>
+                            <div class="chart-bar" style="height:85%;"></div>
+                            <div class="chart-bar" style="height:75%;"></div>
+                            <div class="chart-bar" style="height:95%;"></div>
+                            <div class="chart-bar" style="height:65%;"></div>
+                            <div class="chart-bar" style="height:80%;"></div>
+                            <div class="chart-bar" style="height:72%;"></div>
+                            <div class="chart-bar" style="height:88%;"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <p style="font-size:0.7rem; color:#888; margin-bottom:8px; letter-spacing:0.5px; text-transform:uppercase;">Categories by Sale</p>
+                        <div class="chart-donut">
+                            <svg viewBox="0 0 120 120">
+                                <circle cx="60" cy="60" r="45" fill="none" stroke="#e8e2d8" stroke-width="18"/>
+                                <circle cx="60" cy="60" r="45" fill="none" stroke="#c8a96e" stroke-width="18"
+                                    stroke-dasharray="113 170" stroke-dashoffset="0"/>
+                                <circle cx="60" cy="60" r="45" fill="none" stroke="#8b4513" stroke-width="18"
+                                    stroke-dasharray="68 215" stroke-dashoffset="-113"/>
+                                <circle cx="60" cy="60" r="45" fill="none" stroke="#2c3e50" stroke-width="18"
+                                    stroke-dasharray="50 233" stroke-dashoffset="-181"/>
+                                <text x="60" y="65" text-anchor="middle" font-size="11" font-family="Poppins" fill="#555" font-weight="600">Sales</text>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<script src="/dashboard.js"></script>
+</body>
+</html>

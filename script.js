@@ -59,3 +59,21 @@ window.addEventListener("click", function (event) {
         modal.style.display = "none";
     }
 });
+
+// CLASSICS SLIDER
+const track = document.getElementById('classicsTrack');
+const cardWidth = 150 + 24; // card width + gap
+let currentOffset = 0;
+const visibleCards = 6;
+const totalCards = 20;
+const maxOffset = (totalCards - visibleCards) * cardWidth;
+
+function slideRight() {
+    currentOffset = Math.min(currentOffset + cardWidth * 2, maxOffset);
+    track.style.transform = `translateX(-${currentOffset}px)`;
+}
+
+function slideLeft() {
+    currentOffset = Math.max(currentOffset - cardWidth * 2, 0);
+    track.style.transform = `translateX(-${currentOffset}px)`;
+}
