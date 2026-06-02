@@ -79,6 +79,17 @@ const categoriesTableBody = document.getElementById("categoriesTableBody");
 const clientsTableBody = document.getElementById("clientsTableBody");
 const ordersTableBody = document.getElementById("ordersTableBody");
 
+function searchTable(tableBody, query) {
+    const normalizedQuery = query.trim().toLowerCase();
+
+    if (!tableBody) return;
+
+    Array.from(tableBody.rows).forEach(row => {
+        const rowText = row.textContent.toLowerCase();
+        row.style.display = normalizedQuery && !rowText.includes(normalizedQuery) ? 'none' : '';
+    });
+}
+
 function addAuthor() {
     const row = document.createElement("tr");
     row.innerHTML = `
@@ -124,8 +135,25 @@ const addAuthorBtn = document.getElementById("addAuthorBtn");
 const editCategoryBtn = document.getElementById("editCategoryBtn");
 const addClientBtn = document.getElementById("addClientBtn");
 const editOrdersBtn = document.getElementById("editOrdersBtn");
+const bookSearch = document.getElementById("bookSearch");
+const inventorySearch = document.getElementById("inventorySearch");
+const inventoryTableBody = document.querySelector("#inventory table tbody");
 
 if (addAuthorBtn) addAuthorBtn.addEventListener("click", addAuthor);
 if (editCategoryBtn) editCategoryBtn.addEventListener("click", editCategory);
 if (addClientBtn) addClientBtn.addEventListener("click", addClient);
 if (editOrdersBtn) editOrdersBtn.addEventListener("click", editOrders);
+
+if (bookSearch) {
+    bookSearch.addEventListener("input", () => {
+        const query = bookSearch.value;
+        searchTable(document.getElementById("bookTableBody"), query);
+    });
+}
+
+if (inventorySearch) {
+    inventorySearch.addEventListener("input", () => {
+        const query = inventorySearch.value;
+        searchTable(inventoryTableBody, query);
+    });
+}
