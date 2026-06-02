@@ -135,14 +135,16 @@ const addAuthorBtn = document.getElementById("addAuthorBtn");
 const editCategoryBtn = document.getElementById("editCategoryBtn");
 const addClientBtn = document.getElementById("addClientBtn");
 const editOrdersBtn = document.getElementById("editOrdersBtn");
+const createInventoryBtn = document.getElementById("createInventoryBtn");
 const bookSearch = document.getElementById("bookSearch");
 const inventorySearch = document.getElementById("inventorySearch");
-const inventoryTableBody = document.querySelector("#inventory table tbody");
+const inventoryTableBody = document.getElementById("inventoryTableBody");
 
 if (addAuthorBtn) addAuthorBtn.addEventListener("click", addAuthor);
 if (editCategoryBtn) editCategoryBtn.addEventListener("click", editCategory);
 if (addClientBtn) addClientBtn.addEventListener("click", addClient);
 if (editOrdersBtn) editOrdersBtn.addEventListener("click", editOrders);
+if (createInventoryBtn) createInventoryBtn.addEventListener("click", createInventory);
 
 if (bookSearch) {
     bookSearch.addEventListener("input", () => {
@@ -156,4 +158,23 @@ if (inventorySearch) {
         const query = inventorySearch.value;
         searchTable(inventoryTableBody, query);
     });
+}
+
+function createInventory() {
+    if (!inventoryTableBody) return;
+
+    const row = document.createElement("tr");
+    row.innerHTML = `
+        <td contenteditable="true" placeholder="Zip Code"></td>
+        <td contenteditable="true" placeholder="Name"></td>
+        <td contenteditable="true" placeholder="Type"></td>
+        <td contenteditable="true" placeholder="Status"></td>
+        <td contenteditable="true" placeholder="Responsible"></td>
+        <td contenteditable="true" placeholder="Address"></td>
+        <td contenteditable="true" placeholder="Total Value"></td>
+        <td contenteditable="true" placeholder="References"></td>
+        <td contenteditable="true" placeholder="Action"></td>
+    `;
+
+    inventoryTableBody.insertBefore(row, inventoryTableBody.firstChild);
 }

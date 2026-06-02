@@ -286,7 +286,7 @@
                     <a href="#">More</a>
                 </div>
                 <div style="display:flex; gap:10px; margin-bottom:14px;">
-                    <button class="btn btn-gold">Create Inventory</button>
+                    <button id="createInventoryBtn" class="btn btn-gold" type="button">Create Inventory</button>
                     <input id="inventorySearch" type="text" placeholder="Filter and search..." style="flex:1; padding:7px 12px; border:1px solid var(--border); border-radius:4px; font-family:'Poppins',sans-serif; font-size:0.75rem; background:#fdfbf8;">
                 </div>
                 <div class="table-card">
@@ -305,12 +305,7 @@
                                 <th>Action</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr class="empty-row"><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                            <tr class="empty-row"><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                            <tr class="empty-row"><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                            <tr class="empty-row"><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                            <tr class="empty-row"><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                        <tbody id="inventoryTableBody">
                         </tbody>
                     </table>
                 </div>
