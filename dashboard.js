@@ -52,7 +52,7 @@ document.getElementById("bookForm").addEventListener("submit", function(e) {
     const stock = document.getElementById("bookStock").value;
 
     if (!title || !author || !category || !price || !stock) {
-        console.log("Some fields are empty!");
+        alert("All fields should be completed");
         return;
     }
 
@@ -72,3 +72,60 @@ document.getElementById("bookForm").addEventListener("submit", function(e) {
 
     this.reset();
 });
+
+// Authors/Categories/Clients/Orders actions
+const authorsTableBody = document.getElementById("authorsTableBody");
+const categoriesTableBody = document.getElementById("categoriesTableBody");
+const clientsTableBody = document.getElementById("clientsTableBody");
+const ordersTableBody = document.getElementById("ordersTableBody");
+
+function addAuthor() {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+        <td contenteditable="true" placeholder="Author name"></td>
+        <td contenteditable="true" placeholder="Biography"></td>
+        <td contenteditable="true" placeholder="Number of titles"></td>
+    `;
+    if (authorsTableBody) authorsTableBody.insertBefore(row, authorsTableBody.firstChild);
+}
+
+function editCategory() {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+        <td contenteditable="true" placeholder="Category name"></td>
+        <td contenteditable="true" placeholder="Quantity"></td>
+    `;
+    if (categoriesTableBody) categoriesTableBody.insertBefore(row, categoriesTableBody.firstChild);
+}
+
+function addClient() {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+        <td contenteditable="true" placeholder="Client name"></td>
+        <td contenteditable="true" placeholder="Email"></td>
+        <td contenteditable="true" placeholder="Total orders"></td>
+    `;
+    if (clientsTableBody) clientsTableBody.insertBefore(row, clientsTableBody.firstChild);
+}
+
+function editOrders() {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+        <td contenteditable="true" placeholder="Order ID"></td>
+        <td contenteditable="true" placeholder="Client name"></td>
+        <td contenteditable="true" placeholder="Date"></td>
+        <td contenteditable="true" placeholder="Status"></td>
+        <td contenteditable="true" placeholder="Total"></td>
+    `;
+    if (ordersTableBody) ordersTableBody.insertBefore(row, ordersTableBody.firstChild);
+}
+
+const addAuthorBtn = document.getElementById("addAuthorBtn");
+const editCategoryBtn = document.getElementById("editCategoryBtn");
+const addClientBtn = document.getElementById("addClientBtn");
+const editOrdersBtn = document.getElementById("editOrdersBtn");
+
+if (addAuthorBtn) addAuthorBtn.addEventListener("click", addAuthor);
+if (editCategoryBtn) editCategoryBtn.addEventListener("click", editCategory);
+if (addClientBtn) addClientBtn.addEventListener("click", addClient);
+if (editOrdersBtn) editOrdersBtn.addEventListener("click", editOrders);

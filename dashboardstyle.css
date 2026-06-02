@@ -309,6 +309,14 @@
             color: #666;
         }
 
+        /* Center content for Authors/Categories and Clients/Orders tables */
+        #authors table th,
+        #authors table td,
+        #clients table th,
+        #clients table td {
+            text-align: center;
+        }
+
         table tr:last-child td { border-bottom: none; }
         table tr:hover td { background: #faf7f2; }
 

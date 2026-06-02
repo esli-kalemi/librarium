@@ -13,6 +13,7 @@
 <!-- SIDEBAR -->
 <aside class="sidebar">
     <div class="sidebar-logo">
+        <img src="/images/logo.png" alt="Librarium Logo" style="height:32px; width:auto;">
         <span>LIBRARIUM</span>
     </div>
     <ul class="sidebar-nav">
@@ -111,19 +112,9 @@
                                         <th>Stock</th>
                                     </tr>
                                 </thead>
-                                <tbody id="bookTableBody" >
-                                    <tr class="empty-row"><td></td><td></td><td></td><td></td><td></td></tr>
-                                    <tr class="empty-row"><td></td><td></td><td></td><td></td><td></td></tr>
-                                    <tr class="empty-row"><td></td><td></td><td></td><td></td><td></td></tr>
-                                    <tr class="empty-row"><td></td><td></td><td></td><td></td><td></td></tr>
-                                    <tr class="empty-row"><td></td><td></td><td></td><td></td><td></td></tr>
+                                <tbody id="bookTableBody">
                                 </tbody>
                             </table>
-                        </div>
-                        <div class="btn-row">
-                            <button class="btn btn-secondary"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
-                            <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="addBook()">Add →</button>
-                           
                         </div>
                     </div>
                     <!-- Right: Type cards + add form -->
@@ -207,16 +198,12 @@
                                 <thead>
                                     <tr><th>Name</th><th>Biography</th><th>Titles</th></tr>
                                 </thead>
-                                <tbody>
-                                    <tr class="empty-row"><td></td><td></td><td></td></tr>
-                                    <tr class="empty-row"><td></td><td></td><td></td></tr>
-                                    <tr class="empty-row"><td></td><td></td><td></td></tr>
-                                    <tr class="empty-row"><td></td><td></td><td></td></tr>
+                                <tbody id="authorsTableBody">
                                 </tbody>
                             </table>
                         </div>
                         <div class="btn-row">
-                            <button class="btn btn-info"><i class="fa-solid fa-plus"></i> Add Author →</button>
+                            <button id="addAuthorBtn" class="btn btn-info" type="button"><i class="fa-solid fa-plus"></i> Add Author →</button>
                         </div>
                     </div>
                     <div>
@@ -226,16 +213,12 @@
                                 <thead>
                                     <tr><th>Name</th><th>Quantity (books)</th></tr>
                                 </thead>
-                                <tbody>
-                                    <tr class="empty-row"><td></td><td></td></tr>
-                                    <tr class="empty-row"><td></td><td></td></tr>
-                                    <tr class="empty-row"><td></td><td></td></tr>
-                                    <tr class="empty-row"><td></td><td></td></tr>
+                                <tbody id="categoriesTableBody">
                                 </tbody>
                             </table>
                         </div>
                         <div class="btn-row">
-                            <button class="btn btn-info"><i class="fa-solid fa-pen"></i> Edit →</button>
+                            <button id="editCategoryBtn" class="btn btn-info" type="button"><i class="fa-solid fa-pen"></i> Edit →</button>
                         </div>
                     </div>
                 </div>
@@ -252,7 +235,7 @@
                 <div class="two-col">
                     <div>
                         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
-                            <button class="btn btn-success"><i class="fa-solid fa-plus"></i> Add Client →</button>
+                            <button id="addClientBtn" class="btn btn-success" type="button"><i class="fa-solid fa-plus"></i> Add Client →</button>
                         </div>
                         <div class="table-card">
                             <div class="table-card-title">CLIENTS TABLE</div>
@@ -260,19 +243,14 @@
                                 <thead>
                                     <tr><th>Name</th><th>Email</th><th>Total Orders</th></tr>
                                 </thead>
-                                <tbody>
-                                    <tr class="empty-row"><td></td><td></td><td></td></tr>
-                                    <tr class="empty-row"><td></td><td></td><td></td></tr>
-                                    <tr class="empty-row"><td></td><td></td><td></td></tr>
-                                    <tr class="empty-row"><td></td><td></td><td></td></tr>
-                                    <tr class="empty-row"><td></td><td></td><td></td></tr>
+                                <tbody id="clientsTableBody">
                                 </tbody>
                             </table>
                         </div>
                     </div>
                     <div>
                         <div style="display:flex; justify-content:flex-end; margin-bottom:10px;">
-                            <button class="btn btn-primary"><i class="fa-solid fa-pen"></i> Edit Orders →</button>
+                            <button id="editOrdersBtn" class="btn btn-primary" type="button"><i class="fa-solid fa-pen"></i> Edit Orders →</button>
                         </div>
                         <div class="table-card">
                             <div class="table-card-title">ORDERS TABLE</div>
@@ -280,12 +258,7 @@
                                 <thead>
                                     <tr><th>ID</th><th>Client</th><th>Date</th><th>Status</th><th>Total</th></tr>
                                 </thead>
-                                <tbody>
-                                    <tr class="empty-row"><td></td><td></td><td></td><td></td><td></td></tr>
-                                    <tr class="empty-row"><td></td><td></td><td></td><td></td><td></td></tr>
-                                    <tr class="empty-row"><td></td><td></td><td></td><td></td><td></td></tr>
-                                    <tr class="empty-row"><td></td><td></td><td></td><td></td><td></td></tr>
-                                    <tr class="empty-row"><td></td><td></td><td></td><td></td><td></td></tr>
+                                <tbody id="ordersTableBody">
                                 </tbody>
                             </table>
                         </div>
