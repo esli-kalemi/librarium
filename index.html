@@ -35,11 +35,11 @@
         <ul class="nav-links">
 
             <li>
-                <a href="#" class="active">HOME</a>
+                <a href="#philosophy" class="active">HOME</a>
             </li>
 
             <li>
-                <a href="#">FEATURES</a>
+                <a href="#about">FEATURES</a>
             </li>
 
             <li>
@@ -47,7 +47,7 @@
             </li>
 
             <li>
-                <a href="#">STATISTICS</a>
+                <a href="dashboard.html#reports">STATISTICS</a>
             </li>
 
             <li>
@@ -97,7 +97,7 @@
                     Get Started
                 </button>
 
-                <button class="hero-btn secondary" >
+                <button class="hero-btn secondary" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
                     Watch Demo
                 </button>
 
@@ -109,7 +109,7 @@
 
 <!-- 3 STEP PHILOSOPHY -->
 
-<section class="philosophy">
+<section id="philosophy" class="philosophy">
 
     <h1>3-Step Philosophy</h1>
 
@@ -199,17 +199,20 @@
 </section>
 <!-- ABOUT US -->
 
-<section class="about-us">
+<section id="about" class="about-us">
 
     <h1>About us:</h1>
 
     <div class="about-container">
 
-        <div class="about-image">
+       <div class="about-image">
 
-            <img src="images/about.jpg" alt="">
+    <video controls autoplay muted loop>
+        <source src="videos/demo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
-        </div>
+</div>
 
         <div class="about-content">
 

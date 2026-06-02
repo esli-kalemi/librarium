@@ -331,11 +331,6 @@
                     <a href="#" class="active">Reports</a>
                     <a href="#">Graphics</a>
                     <a href="#">Orders</a>
-                    <a href="#">Incomes</a>
-                    <a href="#">Analytics</a>
-                    <a href="#">Settings</a>
-                    <a href="#">Rankings</a>
-                    <a href="#">More</a>
                 </div>
                 <div class="report-btn-grid" style="margin-bottom:20px;">
                     <button class="report-btn"><i class="fa-solid fa-chart-column"></i> Sales Charts →</button>
@@ -346,34 +341,75 @@
                 <div class="two-col">
                     <div>
                         <p style="font-size:0.7rem; color:#888; margin-bottom:8px; letter-spacing:0.5px; text-transform:uppercase;">Monthly Sales</p>
-                        <div class="chart-placeholder">
-                            <div class="chart-bar" style="height:60%;"></div>
-                            <div class="chart-bar" style="height:80%;"></div>
-                            <div class="chart-bar" style="height:55%;"></div>
-                            <div class="chart-bar" style="height:90%;"></div>
-                            <div class="chart-bar" style="height:70%;"></div>
-                            <div class="chart-bar" style="height:85%;"></div>
-                            <div class="chart-bar" style="height:75%;"></div>
-                            <div class="chart-bar" style="height:95%;"></div>
-                            <div class="chart-bar" style="height:65%;"></div>
-                            <div class="chart-bar" style="height:80%;"></div>
-                            <div class="chart-bar" style="height:72%;"></div>
-                            <div class="chart-bar" style="height:88%;"></div>
+                        <div class="chart-grid">
+                            <div class="chart-column">
+                                <div class="chart-bar" style="height:52%;"></div>
+                                <span>Jan</span>
+                            </div>
+                            <div class="chart-column">
+                                <div class="chart-bar" style="height:68%;"></div>
+                                <span>Feb</span>
+                            </div>
+                            <div class="chart-column">
+                                <div class="chart-bar" style="height:60%;"></div>
+                                <span>Mar</span>
+                            </div>
+                            <div class="chart-column">
+                                <div class="chart-bar" style="height:85%;"></div>
+                                <span>Apr</span>
+                            </div>
+                            <div class="chart-column">
+                                <div class="chart-bar" style="height:72%;"></div>
+                                <span>May</span>
+                            </div>
+                            <div class="chart-column">
+                                <div class="chart-bar" style="height:92%;"></div>
+                                <span>Jun</span>
+                            </div>
+                            <div class="chart-column">
+                                <div class="chart-bar" style="height:98%;"></div>
+                                <span>Jul</span>
+                            </div>
+                            <div class="chart-column">
+                                <div class="chart-bar" style="height:94%;"></div>
+                                <span>Aug</span>
+                            </div>
+                            <div class="chart-column">
+                                <div class="chart-bar" style="height:70%;"></div>
+                                <span>Sep</span>
+                            </div>
+                            <div class="chart-column">
+                                <div class="chart-bar" style="height:66%;"></div>
+                                <span>Oct</span>
+                            </div>
+                            <div class="chart-column">
+                                <div class="chart-bar" style="height:74%;"></div>
+                                <span>Nov</span>
+                            </div>
+                            <div class="chart-column">
+                                <div class="chart-bar" style="height:82%;"></div>
+                                <span>Dec</span>
+                            </div>
                         </div>
                     </div>
                     <div>
                         <p style="font-size:0.7rem; color:#888; margin-bottom:8px; letter-spacing:0.5px; text-transform:uppercase;">Categories by Sale</p>
                         <div class="chart-donut">
-                            <svg viewBox="0 0 120 120">
-                                <circle cx="60" cy="60" r="45" fill="none" stroke="#e8e2d8" stroke-width="18"/>
-                                <circle cx="60" cy="60" r="45" fill="none" stroke="#c8a96e" stroke-width="18"
-                                    stroke-dasharray="113 170" stroke-dashoffset="0"/>
-                                <circle cx="60" cy="60" r="45" fill="none" stroke="#8b4513" stroke-width="18"
-                                    stroke-dasharray="68 215" stroke-dashoffset="-113"/>
-                                <circle cx="60" cy="60" r="45" fill="none" stroke="#2c3e50" stroke-width="18"
-                                    stroke-dasharray="50 233" stroke-dashoffset="-181"/>
-                                <text x="60" y="65" text-anchor="middle" font-size="11" font-family="Poppins" fill="#555" font-weight="600">Sales</text>
-                            </svg>
+                            <div class="donut-graphic">
+                                <svg viewBox="0 0 120 120">
+                                    <circle cx="60" cy="60" r="45" fill="none" stroke="#e8e2d8" stroke-width="18"/>
+                                    <circle cx="60" cy="60" r="45" fill="none" stroke="#c8a96e" stroke-width="18" stroke-dasharray="108 165" stroke-dashoffset="0"/>
+                                    <circle cx="60" cy="60" r="45" fill="none" stroke="#8b4513" stroke-width="18" stroke-dasharray="72 201" stroke-dashoffset="-108"/>
+                                    <circle cx="60" cy="60" r="45" fill="none" stroke="#2c3e50" stroke-width="18" stroke-dasharray="48 225" stroke-dashoffset="-180"/>
+                                    <text x="60" y="65" text-anchor="middle" font-size="11" font-family="Poppins" fill="#555" font-weight="600">Sales</text>
+                                </svg>
+                            </div>
+                            <div class="donut-legend">
+                                <div class="legend-item"><span class="legend-dot" style="background:#c8a96e"></span> Fiction 38%</div>
+                                <div class="legend-item"><span class="legend-dot" style="background:#8b4513"></span> Nonfiction 25%</div>
+                                <div class="legend-item"><span class="legend-dot" style="background:#2c3e50"></span> Children 17%</div>
+                                <div class="legend-item"><span class="legend-dot" style="background:#e8e2d8"></span> Other 20%</div>
+                            </div>
                         </div>
                     </div>
                 </div>

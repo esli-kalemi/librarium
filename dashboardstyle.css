@@ -508,11 +508,39 @@
             overflow: hidden;
         }
 
+        .chart-grid {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 14px 10px 10px;
+            display: grid;
+            grid-template-columns: repeat(12, minmax(0, 1fr));
+            gap: 10px;
+            align-items: end;
+            min-height: 220px;
+        }
+
+        .chart-column {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 8px;
+            height: 160px;
+        }
+
+        .chart-column span {
+            font-size: 0.68rem;
+            color: #666;
+            letter-spacing: 0.5px;
+        }
+
         .chart-bar {
-            flex: 1;
+            width: 100%;
+            min-height: 10px;
             background: var(--accent);
-            border-radius: 3px 3px 0 0;
-            opacity: 0.8;
+            border-radius: 6px 6px 0 0;
+            opacity: 0.9;
             transition: opacity 0.2s;
         }
 
@@ -522,10 +550,42 @@
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 6px;
-            height: 160px;
+            padding: 18px;
             display: flex;
             align-items: center;
             justify-content: center;
+            gap: 18px;
+            min-height: 200px;
+        }
+
+        .donut-graphic {
+            width: 120px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .donut-legend {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            font-size: 0.75rem;
+            color: #555;
+            max-width: 120px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .legend-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: inline-block;
         }
 
         .chart-donut svg { width: 120px; height: 120px; }
