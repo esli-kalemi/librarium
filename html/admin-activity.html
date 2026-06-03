@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Librarium — Admin Activity</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/dashboardstyle.css">
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+    <div class="sidebar-logo">
+        <img src="../images/logo.png" alt="Librarium Logo" style="height:32px; width:auto;">
+        <span>LIBRARIUM</span>
+    </div>
+    <ul class="sidebar-nav">
+        <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="dashboard.html"><i class="fa-solid fa-gauge"></i> Dashboard</a></li>
+        <li><a href="notifications.html"><i class="fa-solid fa-bell"></i> Notifications</a></li>
+        <li><a href="#" class="active"><i class="fa-solid fa-user-shield"></i> Activity Log</a></li>
+        <li><a href="#books"><i class="fa-solid fa-book"></i> Books</a></li>
+        <li><a href="categories.html"><i class="fa-solid fa-tags"></i> Categories</a></li>
+        <li><a href="#authors"><i class="fa-solid fa-feather"></i> Authors</a></li>
+        <li><a href="#clients"><i class="fa-solid fa-users"></i> Clients</a></li>
+        <li><a href="#orders"><i class="fa-solid fa-cart-shopping"></i> Orders</a></li>
+        <li><a href="#inventory"><i class="fa-solid fa-warehouse"></i> Inventories</a></li>
+        <li class="logout"><a href="index.html"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+    </ul>
+</aside>
+
+<!-- MAIN -->
+<main class="main">
+    <div class="topbar">
+        <span class="topbar-title">ADMIN ACTIVITY</span>
+        <div class="topbar-right">
+            <a href="dashboard.html"><i class="fa-solid fa-arrow-left"></i> Back to Dashboard</a>
+            <a href="notifications.html"><i class="fa-solid fa-bell"></i> Notifications</a>
+            <a href="admin-activity.html" class="active"><i class="fa-solid fa-circle-user"></i> Admin</a>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="section-block">
+            <div class="section-header gold">
+                <i class="fa-solid fa-clock"></i>
+                <h2>Activity Log</h2>
+            </div>
+            <div class="section-body">
+                <div class="table-card">
+                    <div class="table-card-title">ADMIN ACTIVITY</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Time</th>
+                                <th>Admin</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2026-06-03 09:12</td>
+                                <td>Admin Jane</td>
+                                <td>Marked "The Great Gatsby" as overdue</td>
+                            </tr>
+                            <tr>
+                                <td>2026-06-03 08:47</td>
+                                <td>Admin Alex</td>
+                                <td>Added new borrowed record for Maya Patel</td>
+                            </tr>
+                            <tr>
+                                <td>2026-06-02 17:25</td>
+                                <td>Admin Jane</td>
+                                <td>Updated stock for "1984" to 2 copies</td>
+                            </tr>
+                            <tr>
+                                <td>2026-06-02 14:03</td>
+                                <td>Admin Alex</td>
+                                <td>Created low stock notification for "Atomic Habits"</td>
+                            </tr>
+                            <tr>
+                                <td>2026-06-01 11:09</td>
+                                <td>Admin Jane</td>
+                                <td>Approved client registration for Lucas Gray</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+</body>
+</html>
