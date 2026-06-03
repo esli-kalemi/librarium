@@ -261,6 +261,9 @@
         .section-body {
             padding: 24px;
             background: var(--bg-section);
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
         }
 
         /* GRID LAYOUTS */
@@ -273,6 +276,11 @@
             border: 1px solid var(--border);
             border-radius: 6px;
             overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .table-card:last-child {
+            margin-bottom: 0;
         }
 
         .table-card-title {

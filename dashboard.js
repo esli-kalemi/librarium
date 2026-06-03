@@ -131,10 +131,24 @@ function editOrders() {
     if (ordersTableBody) ordersTableBody.insertBefore(row, ordersTableBody.firstChild);
 }
 
+function addBorrowedBook() {
+    const borrowedBooksTableBody = document.getElementById("borrowedBooksTableBody");
+    const row = document.createElement("tr");
+    row.innerHTML = `
+        <td contenteditable="true" placeholder="Client name"></td>
+        <td contenteditable="true" placeholder="Book title"></td>
+        <td contenteditable="true" placeholder="Borrow date"></td>
+        <td contenteditable="true" placeholder="Due date"></td>
+        <td contenteditable="true" placeholder="Status"></td>
+    `;
+    if (borrowedBooksTableBody) borrowedBooksTableBody.insertBefore(row, borrowedBooksTableBody.firstChild);
+}
+
 const addAuthorBtn = document.getElementById("addAuthorBtn");
 const editCategoryBtn = document.getElementById("editCategoryBtn");
 const addClientBtn = document.getElementById("addClientBtn");
 const editOrdersBtn = document.getElementById("editOrdersBtn");
+const addBorrowedBtn = document.getElementById("addBorrowedBtn");
 const createInventoryBtn = document.getElementById("createInventoryBtn");
 const bookSearch = document.getElementById("bookSearch");
 const inventorySearch = document.getElementById("inventorySearch");
@@ -144,6 +158,7 @@ if (addAuthorBtn) addAuthorBtn.addEventListener("click", addAuthor);
 if (editCategoryBtn) editCategoryBtn.addEventListener("click", editCategory);
 if (addClientBtn) addClientBtn.addEventListener("click", addClient);
 if (editOrdersBtn) editOrdersBtn.addEventListener("click", editOrders);
+if (addBorrowedBtn) addBorrowedBtn.addEventListener("click", addBorrowedBook);
 if (createInventoryBtn) createInventoryBtn.addEventListener("click", createInventory);
 
 if (bookSearch) {

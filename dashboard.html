@@ -6,14 +6,14 @@
     <title>Librarium — Admin Dashboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/dashboardstyle.css">
+    <link rel="stylesheet" href="dashboardstyle.css">
 </head>
 <body>
 
 <!-- SIDEBAR -->
 <aside class="sidebar">
     <div class="sidebar-logo">
-        <img src="/images/logo.png" alt="Librarium Logo" style="height:32px; width:auto;">
+        <img src="images/logo.png" alt="Librarium Logo" style="height:32px; width:auto;">
         <span>LIBRARIUM</span>
     </div>
     <ul class="sidebar-nav">
@@ -38,7 +38,7 @@
         <span class="topbar-title">ADMIN DASHBOARD</span>
         <div class="topbar-right">
             <a href="index.html"><i class="fa-solid fa-arrow-left"></i> Back to Site</a>
-            <a href="#"><i class="fa-solid fa-bell"></i> Notifications</a>
+            <a href="notifications.html"><i class="fa-solid fa-bell"></i> Notifications</a>
             <a href="#"><i class="fa-solid fa-circle-user"></i> Admin</a>
         </div>
     </div>
@@ -267,6 +267,60 @@
             </div>
         </div>
 
+        <!-- BORROWED BOOKS -->
+        <div class="section-block" id="borrowed">
+            <div class="section-header">
+                <i class="fa-solid fa-book-reader" style="color:#fff; font-size:1.1rem;"></i>
+                <h2>Borrowed Books</h2>
+            </div>
+            <div class="section-body">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; gap:12px; flex-wrap:wrap;">
+                    <div></div>
+                    <button id="addBorrowedBtn" class="btn btn-secondary" type="button"><i class="fa-solid fa-plus"></i> Add →</button>
+                </div>
+                <div class="table-card">
+                    <div class="table-card-title">BORROWED BOOKS</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Client</th>
+                                <th>Book</th>
+                                <th>Borrow Date</th>
+                                <th>Due Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="borrowedBooksTableBody">
+                            <tr>
+                                <td contenteditable="true">Jordan Smith</td>
+                                <td contenteditable="true">The Great Gatsby</td>
+                                <td contenteditable="true">2026-05-21</td>
+                                <td contenteditable="true">2026-06-04</td>
+                                <td contenteditable="true">Overdue</td>
+                            </tr>
+                            <tr>
+                                <td contenteditable="true">Maya Patel</td>
+                                <td contenteditable="true">A Brief History of Time</td>
+                                <td contenteditable="true">2026-05-28</td>
+                                <td contenteditable="true">2026-06-11</td>
+                                <td contenteditable="true">Due soon</td>
+                            </tr>
+                            <tr>
+                                <td contenteditable="true">Lucas Gray</td>
+                                <td contenteditable="true">Invisible Cities</td>
+                                <td contenteditable="true">2026-06-01</td>
+                                <td contenteditable="true">2026-06-15</td>
+                                <td contenteditable="true">Borrowed</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="btn-row" style="justify-content:flex-end; margin-top:14px;">
+                        <a href="notifications.html#overdueList" class="btn btn-primary"><i class="fa-solid fa-bell"></i> View Overdue Books</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- INVENTORY CONTROL -->
         <div class="section-block" id="inventory">
             <div class="section-header dark">
@@ -414,6 +468,6 @@
     </div>
 </main>
 
-<script src="/dashboard.js"></script>
+<script src="dashboard.js"></script>
 </body>
 </html>
