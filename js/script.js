@@ -77,3 +77,26 @@ function slideLeft() {
     currentOffset = Math.max(currentOffset - cardWidth * 2, 0);
     track.style.transform = `translateX(-${currentOffset}px)`;
 }
+
+// CONTACT FORM SUBMISSION
+const contactForm = document.getElementById('contactForm');
+const contactNotification = document.getElementById('contactNotification');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const name = document.getElementById('contactName').value.trim();
+        const email = document.getElementById('contactEmail').value.trim();
+        const message = document.getElementById('contactMessageField').value.trim();
+
+        if (!name || !email || !message) {
+            alert('Please fill in all requested data.');
+            contactNotification.textContent = '';
+            return;
+        }
+
+        contactNotification.textContent = 'Request sent!';
+        contactForm.reset();
+    });
+}

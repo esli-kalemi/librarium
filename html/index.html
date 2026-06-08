@@ -43,7 +43,7 @@
             </li>
 
             <li>
-                <a href="#">ARTICLES</a>
+                <a href="#discover">ARTICLES</a>
             </li>
 
             <li>
@@ -456,13 +456,13 @@
 
         <h2>Contact Form</h2>
 
-        <input type="text" placeholder="Name">
-
-        <input type="email" placeholder="Email address">
-
-        <textarea placeholder="Leave a message"></textarea>
-
-        <button>Send message</button>
+        <form id="contactForm" class="contact-form">
+            <input id="contactName" type="text" placeholder="Name" required>
+            <input id="contactEmail" type="email" placeholder="Email address" required>
+            <textarea id="contactMessageField" placeholder="Leave a message" required></textarea>
+            <button type="submit">Send message</button>
+            <div id="contactNotification" class="contact-notification" aria-live="polite"></div>
+        </form>
 
     </div>
 </section>
