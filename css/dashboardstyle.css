@@ -357,6 +357,19 @@
         .btn-gold { background: var(--accent); color: #1a1a2e; }
         .btn-gold:hover { background: var(--accent-dark); }
 
+        /* Sort Button Colors */
+        .sort-latest { background: var(--table-header); color: #fff; }
+        .sort-latest:hover { background: #1a2530; }
+        .sort-latest.active { background: var(--accent); color: #1a1a2e; }
+
+        .sort-shipped { background: var(--table-header); color: #fff; }
+        .sort-shipped:hover { background: #1a2530; }
+        .sort-shipped.active { background: var(--info); color: #fff; }
+
+        .sort-stock { background: var(--table-header); color: #fff; }
+        .sort-stock:hover { background: #1a2530; }
+        .sort-stock.active { background: var(--success); color: #fff; }
+
         .btn-row {
             display: flex;
             gap: 10px;
