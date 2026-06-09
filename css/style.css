@@ -520,6 +520,17 @@ body{
 
     border-radius: 20px;
 }
+
+.contact-notification {
+    color: white;
+
+    margin-top: 12px;
+
+    text-align: center;
+
+    font-weight: 600;
+}
+
 /* NUMBERS */
 
 .stats{
