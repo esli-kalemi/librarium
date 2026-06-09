@@ -56,9 +56,18 @@ let currentSort = 'latest';
 function sortBooks(sortType, button) {
     currentSort = sortType;
     
-    // Update active button
-    document.querySelectorAll('.sort-btn').forEach(btn => btn.classList.remove('active'));
-    if (button) button.classList.add('active');
+    // Update active button styling
+    document.querySelectorAll('.sort-btn').forEach(btn => {
+        btn.classList.remove('active');
+        btn.classList.remove('btn-gold');
+        btn.classList.add('btn-secondary');
+    });
+    
+    if (button) {
+        button.classList.add('active');
+        button.classList.remove('btn-secondary');
+        button.classList.add('btn-gold');
+    }
     
     renderCategories();
 }
